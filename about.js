@@ -1,5 +1,3 @@
-// animation.js
-
 window.addEventListener('load', () => {
   
   const tl = gsap.timeline({
