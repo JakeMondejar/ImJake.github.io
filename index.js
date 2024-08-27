@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
   
   const tl = gsap.timeline();
 
-  // Faster loader text reveal
+ 
   tl.fromTo('.loader-text span', 
       {
           y: 50, 
@@ -11,14 +11,14 @@ window.addEventListener('load', () => {
       {
           y: 0, 
           opacity: 1, 
-          duration: 0.5, // Reduced duration
-          stagger: 0.05, // Reduced stagger
+          duration: 0.5, 
+          stagger: 0.05, 
           ease: 'power2.out'
       }
   )
   .to('#preloader', {
       autoAlpha: 0, 
-      duration: 0.3, // Reduced duration
+      duration: 0.3, 
       ease: 'power2.out',
       onComplete: () => {
           document.getElementById('preloader').style.display = 'none';
@@ -28,39 +28,39 @@ window.addEventListener('load', () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Faster reveal for project-parent and other sections
+  
   tl.from(".project-parent", {
-    y: -20, // Further reduced movement
+    y: -20, 
     opacity: 0,
-    duration: 0.5, // Further reduced duration
+    duration: 0.5, 
     ease: "power2.out",
   })
   .from(".hello", {
-    x: -30, // Further reduced movement
+    x: -30, 
     opacity: 0,
-    duration: 0.5, // Further reduced duration
+    duration: 0.5, 
     ease: "power2.out",
-    stagger: 0.1, // Reduced stagger
-  }, "-=0.25")  // Adjusted overlap
+    stagger: 0.1, 
+  }, "-=0.25")  
   .from(".im-jake-a-container", {
-    x: 30, // Further reduced movement
+    x: 30, 
     opacity: 0,
-    duration: 0.5, // Further reduced duration
-    delay: 0.1, // Reduced delay
-  }, "-=0.25") // Adjusted overlap
+    duration: 0.5, 
+    delay: 0.1, 
+  }, "-=0.25") 
   .from(".explore", {
-    y: 20, // Further reduced movement
+    y: 20, 
     opacity: 0,
-    duration: 0.5, // Further reduced duration
-    delay: 0.2, // Reduced delay
+    duration: 0.5, 
+    delay: 0.2, 
     ease: "power2.out",
-  }, "-=0.25"); // Adjusted overlap
+  }, "-=0.25"); 
 
   gsap.utils.toArray('.slider > div').forEach((slide, index) => {
     gsap.from(slide, {
       opacity: 0,
-      y: 30, // Further reduced movement
-      duration: 0.5, // Further reduced duration
+      y: 30, 
+      duration: 0.5, 
       ease: 'power2.out',
       scrollTrigger: {
         trigger: slide,
@@ -73,7 +73,7 @@ window.addEventListener('load', () => {
   });
 
   gsap.to(".hello", {
-    y: 15, // Further reduced movement
+    y: 15, 
     scrollTrigger: {
       trigger: ".hero",
       start: "top top",
@@ -83,7 +83,7 @@ window.addEventListener('load', () => {
   });
 
   gsap.to(".im-jake-a-container", {
-    y: 10, // Further reduced movement
+    y: 10, 
     scrollTrigger: {
       trigger: ".hero",
       start: "top top",
