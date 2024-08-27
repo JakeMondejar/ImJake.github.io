@@ -1,14 +1,14 @@
 // animation.js
 
 window.addEventListener('load', () => {
-  // Create a GSAP Timeline for pre-loader and reveal animations
+  
   const tl = gsap.timeline({
     onComplete: () => {
-      // No need to call triggerRevealAnimations separately, as animations are now part of the timeline
+     
     }
   });
 
-  // Add pre-loader animation to the timeline
+  
   tl.fromTo('.loader-text span', 
       {
           y: 50, 
@@ -17,74 +17,74 @@ window.addEventListener('load', () => {
       {
           y: 0, 
           opacity: 1, 
-          duration: 0.5, // Reduced duration
+          duration: 0.5, 
           stagger: 0.05,
           ease: 'power2.out'
       }
   )
   .to('#preloader', {
       autoAlpha: 0, 
-      duration: 0.3, // Reduced duration
+      duration: 0.3, 
       ease: 'power2.out',
       onComplete: () => {
           document.getElementById('preloader').style.display = 'none';
           document.getElementById('main-content').style.display = 'block';
       }
   })
-  // Add reveal animations to the timeline
+  
   .from(".about .frame-parent", {
     opacity: 0,
-    y: 30, // Reduced movement
-    duration: 1, // Reduced duration
+    y: 30, 
+    duration: 1, 
     ease: "power3.out"
   })
   .from(".about .intro h1, .about .intro .bio", {
     opacity: 0,
-    y: 30, // Reduced movement
-    stagger: 0.2, // Reduced stagger
-    duration: 1, // Reduced duration
+    y: 30, 
+    stagger: 0.2, 
+    duration: 1, 
     ease: "power3.out"
-  }, "-=1") // Adjust overlap to maintain smooth transition
+  }, "-=1") 
   .from(".about .bio-image-container-wrapper", {
     opacity: 0,
-    x: 10,  // Reduced movement
-    y: 10,  // Reduced movement
-    stagger: 0.2, // Reduced stagger
-    duration: 1, // Reduced duration
+    x: 10,  
+    y: 10, 
+    stagger: 0.2, 
+    duration: 1, 
     ease: "power3.out"
-  }, "-=1") // Adjust overlap to maintain smooth transition
+  }, "-=1") 
   .from(".about .bio-content-wrapper", {
     opacity: 0,
-    y: 30, // Reduced movement
-    duration: 1, // Reduced duration
-    delay: 0.5, // Reduced delay
+    y: 30, 
+    duration: 1, 
+    delay: 0.5, 
     ease: "power3.out"
-  }, "-=1") // Adjust overlap to maintain smooth transition
+  }, "-=1") 
   .from(".footer .footer-content", {
     opacity: 0,
-    y: 30,  // Reduced movement
-    duration: 1, // Reduced duration
+    y: 30, 
+    duration: 1, 
     ease: "power3.out"
-  }, "-=1") // Adjust overlap to maintain smooth transition
+  }, "-=1") 
   .from(".footer .footer-inner", {
     opacity: 0,
-    y: 30,  // Reduced movement
-    duration: 1, // Reduced duration
-    delay: 0.25,  // Reduced delay
+    y: 30,  
+    duration: 1, 
+    delay: 0.25,  
     ease: "power3.out"
-  }, "-=1") // Adjust overlap to maintain smooth transition
+  }, "-=1") 
   .from(".footer .location", {
     opacity: 0,
-    y: 30,  // Reduced movement
-    duration: 1, // Reduced duration
-    delay: 0.5,  // Reduced delay
+    y: 30,  
+    duration: 1, 
+    delay: 0.5,  
     ease: "power3.out"
-  }, "-=1") // Adjust overlap to maintain smooth transition
+  }, "-=1") 
   .from(".footer .socials", {
     opacity: 0,
-    y: 30,  // Reduced movement
-    duration: 1, // Reduced duration
-    delay: 0.75,  // Reduced delay
+    y: 30,  
+    duration: 1, 
+    delay: 0.75,  
     ease: "power3.out"
-  }, "-=1"); // Adjust overlap to maintain smooth transition
+  }, "-=1"); 
 });
